@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css?family=Avenir');
+
+
+.top-bar-title {
+    font-family: 'Coiny', cursive;
+    font-size: 22px;
+    color: #ffffff;
+}
+
+.nav-menu a {
+    color: #1a0202;
+}
+.home{
+    width: 100%
+}
+a:hover, a:click {
+    color: #34AF23;
+    text-decoration: none;
+  }
+  .square-service-block{
+      position:relative;
+      overflow:hidden;
+      margin:15px auto;
+      border-radius: 0px;
+      border-color: #1a0202;
+      border-width: 2px;
+      border-style: solid;
+      }
+  .square-service-block a {
+    background-color: #34af23;
+    border-radius: 10px;
+    display: block;
+    padding: 60px 20px;
+    text-align: center;
+    width: 100%;
+    border-radius: 0px;
+    border-color: #1a0202;
+    border-width: 2px;
+    border-style: solid;
+  }
+  .square-service-analitics a {
+    border-radius: 10px;
+    display: block;
+    padding: 10px 10px;
+    text-align: center;
+    width: 80%;
+  }
+  .square-service-block a:hover{
+    background-color: #34AF23;
+    border-radius: 0px;
+    border-color: #1a0202;
+    border-width: 2px
+  
+  }
+  
+  .ssb-icon {
+    color: #fff;
+    display: inline-block;
+    font-size: 28px;
+    margin: 0 0 20px;
+  }
+  .ssb-icon-analitics {
+    color: black;
+    display: inline-block;
+    font-size: 28px;
+    margin: 0 0 20px;
+  }
+  h2.ssb-title-analitics {
+    color: black;
+    font-size: 20px;
+    font-weight: 200;
+    margin:0;
+    padding:0;
+    text-transform: uppercase;
+  }
+  h2.ssb-title {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 200;
+    margin:0;
+    padding:0;
+    text-transform: uppercase;
+  }

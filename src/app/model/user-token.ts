@@ -1,6 +1,6 @@
 export class UserToken {
     constructor(
-        public token: String,
+        public access_token: String,
         public expires_in: number
        ) {
 

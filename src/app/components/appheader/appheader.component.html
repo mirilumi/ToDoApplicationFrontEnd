@@ -1,0 +1,65 @@
+
+<header class="main-header">
+
+    <a class="logo">
+      <span class="logo-mini"><b>Q</b>A</span>
+      <span class="logo-lg"><b>TODO</b>Application</span>
+    </a>
+  
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top">
+     
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+            <li *ngIf="notification !== undefined" class="dropdown messages-menu">
+                <ul class="dropdown-menu">
+                  <li class="header">You have {{notification.length}} notifications</li>
+                  <li>
+                    <!-- inner menu: contains the actual data -->
+                    <ul class="menu">
+                      <li  *ngFor="let notifications of notification" ><!-- start message -->
+                        <a [routerLink]="['users']">
+                          <h4>
+                            New User
+                          </h4>
+                          <p >{{notifications.message}}</p>
+                        </a>
+                      </li>
+  
+                    </ul>
+                  </li>
+                  <!-- <li class="footer"><a href="#">See All Messages</a></li> -->
+                </ul>
+              </li>
+          <li class="dropdown messages-menu">
+          <li *ngIf="userContext !== undefined" class="dropdown user user-menu">
+            
+            <ul class="dropdown-menu">
+              <!-- User image -->
+              <li class="user-header">
+  
+                <!-- <p>
+                  {{UserObj.user.name +" "+ UserObj.user.lastName}}
+                  <small>{{UserObj.user.jobDescription}}</small>
+                </p> -->
+              </li>
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="pull-left">
+                  <a [routerLink]="['']" class="btn btn-default btn-flat">My profile</a>
+                </div>
+                <div class="pull-right">
+                  <a style="cursor:pointer" (click)="logout()" class="btn btn-default btn-flat">Sign out</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <!-- Control Sidebar Toggle Button -->
+          <li>
+            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+          </li>
+        </ul>
+      </div>
+  
+    </nav>
+  </header>

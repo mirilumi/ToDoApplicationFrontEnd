@@ -1,0 +1,54 @@
+<app-appheader></app-appheader>
+<div>
+  <section>
+    <div class="container">
+      <div class="text-center image">
+      </div>
+      <br><br>
+      <div class="row">
+        <div class="row" style="text-align:center">
+          <h3>Welcome {{firstName}} {{lastName}} </h3>
+        </div>
+        <br><br><br><br><br>
+        <div class="row justify-content-md-center">
+          <form #itemToAdd="ngForm" name="form" (ngSubmit)="addItem(itemToAdd)" role="form" style="margin:30px">
+            <div class="row">
+              <div class="col-md-10">
+                <div class="form-group">
+                  <input type="name" name="name" id="name" class="form-control" [(ngModel)]="name"
+                    placeholder="Add new Item" required />
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div class="form-actions">
+                  <button type="submit" [disabled]="!itemToAdd.form.valid || dataLoading" class="btn btn-success btn-lg btn-block"><span
+                      class="glyphicon glyphicon-pushpin"></span>Add Item</button>
+                </div>
+              </div>
+            </div>
+          </form>
+          <ul class="list-group">
+            <li class="list-group-item list-group-item-action" *ngFor="let item of items">
+              <span style="text-align:center">{{item.name}}</span>
+              <div class="pull-right">
+                <button class="btn btn-info btn-lg btn-block" (click)="onEdit(item)"></button>
+              </div>
+              <div class="pull-right">
+                <button class="btn btn-danger btn-lg btn-block" (click)="onRemove(item)"></button>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+
+        <!-- NEW ITEM -->
+        <div class="row justify-content-md-center">
+          <nav>
+            <a routerLink="/new-item" class="pull-right">New item</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<app-appfooter></app-appfooter>

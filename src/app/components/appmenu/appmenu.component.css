@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Avenir');
+
+.custom-class{
+    cursor:pointer;block-size: 100px;border-radius: 0px;
+          border-color: #1a0202;
+          border-top-width: 1px;
+          border-bottom-width: 1px;
+          border-left-width: 2px;
+          border-right-width: 2px;
+          border-style: solid;
+          position: relative;
+          text-align: center;
+          text-decoration: black;
+          padding-top: 40px;
+}

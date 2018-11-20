@@ -1,0 +1,88 @@
+<header class="main-header">
+
+  <!-- Logo -->
+  <a href="index2.html" class="logo">
+    <!-- mini logo for sidebar mini 50x50 pixels -->
+    <span class="logo-mini"><b>Q</b>A</span>
+    <!-- logo for regular state and mobile devices -->
+    <span class="logo-lg"><b>Quiz</b>Application</span>
+  </a>
+
+  <!-- Header Navbar: style can be found in header.less -->
+  <nav class="navbar navbar-static-top">
+    <!-- Sidebar toggle button-->
+   
+    <!-- Navbar Right Menu -->
+    <div class="navbar-custom-menu">
+      <ul class="nav navbar-nav">
+        <!-- Messages: style can be found in dropdown.less-->
+        <li class="dropdown messages-menu">
+        <li class="dropdown user user-menu">
+          <ul class="dropdown-menu">
+            <!-- User image -->
+            <li class="user-header">
+              <p>
+                <small></small>
+              </p>
+            </li>
+            <!-- Menu Footer-->
+            <li class="user-footer">
+              <div class="pull-left">
+                <a [routerLink]="['']" class="btn btn-default btn-flat">Read Requirement</a>
+              </div>
+              <div class="pull-right">
+                <a style="cursor:pointer" (click)="logout()" class="btn btn-default btn-flat">Sign out</a>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <!-- Control Sidebar Toggle Button -->
+        <li>
+          <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+        </li>
+      </ul>
+    </div>
+
+  </nav>
+</header>
+<div style="padding-top:50px" class="container">
+<div>
+    <div class="col-md-3 text-center"></div>
+    <div class="col-md-6">
+    <form #register="ngForm" name="form" (ngSubmit)="register_user(register)" role="form" >
+          <div class="form-group" ng-class="{ 'has-error': form.firstName.$dirty && form.firstName.$error.required }">
+                  <label for="firstName">Name</label>
+                  <input type="text" name="firstName" id="firstName" class="form-control" [(ngModel)]="register.firstName" placeholder="firstName" required />
+                  <!-- <span ng-show="form.name.$dirty && form.name.$error.required" class="help-block">Department Name is required</span> -->
+          </div>
+          <div class="form-group" ng-class="{ 'has-error': form.lastName.$dirty && form.name.$error.required }">
+                  <label for="lastName">Last Name</label>
+                  <input type="text" name="lastName" id="lastName" class="form-control" [(ngModel)]="register.lastName" placeholder="Last Name" required />
+                  <!-- <span ng-show="form.name.$dirty && form.name.$error.required" class="help-block">Department Name is required</span> -->
+          </div>
+        <div class="form-group" ng-class="{ 'has-error': form.email.$dirty && form.email.$error.required }">
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" class="form-control" [(ngModel)]="register.username" placeholder="username" required />
+            <!-- <span ng-show="form.name.$dirty && form.name.$error.required" class="help-block">Department Name is required</span> -->
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.email.$dirty && form.email.$error.required }">
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" class="form-control" [(ngModel)]="register.email" placeholder="Email" required />
+          <!-- <span ng-show="form.name.$dirty && form.name.$error.required" class="help-block">Department Name is required</span> -->
+      </div>
+        <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" class="form-control" [(ngModel)]="register.password" placeholder="password" required />
+            <!-- <span ng-show="form.description.$dirty && form.description.$error.required" class="help-block">Department Description is required</span> -->
+        </div> 
+        <div class="form-actions">
+            <button type="submit" [disabled]="!register.form.valid || dataLoading" class="btn btn-success btn-lg btn-block"><span class="glyphicon glyphicon-pushpin"></span>Regsiter</button>
+            <a (click)="cancel()" class="btn btn-danger btn-lg btn-block">
+                <span class="glyphicon glyphicon-remove"></span>
+                Cancel
+            </a>
+        </div>
+    </form>
+    <div class="col-md-3 text-center"></div>
+  </div>
+</div>

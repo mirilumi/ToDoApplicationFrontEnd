@@ -1,3 +1,34 @@
-<p>
-  login works!
-</p>
+<app-appheader></app-appheader>
+<div style="padding-top:50px" class="container">
+    <div class="col-md-3 text-center"></div>
+    <div class="col-md-6">
+        <form #login="ngForm" name="form" (ngSubmit)="login_user(login)" role="form">
+            <div class="form-group" ng-class="{ 'has-error': form.name.$dirty && form.name.$error.required }">
+                <label for="userName">Username</label>
+                <input type="text" name="username" id="userName" class="form-control" [(ngModel)]="login.userName"
+                    placeholder="username" required />
+                <!-- <span ng-show="form.name.$dirty && form.name.$error.required" class="help-block">Department Name is required</span> -->
+            </div>
+            <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" class="form-control" [(ngModel)]="login.password"
+                    placeholder="password" required />
+                <!-- <span ng-show="form.description.$dirty && form.description.$error.required" class="help-block">Department Description is required</span> -->
+            </div>
+            <div class="form-actions">
+                <button type="submit" [disabled]="!login.form.valid || dataLoading" class="btn btn-success btn-lg btn-block"><span
+                        class="glyphicon glyphicon-pushpin"></span>Login</button>
+
+                <a (click)="register()" class="btn btn-info btn-lg btn-block">
+                    <span class="glyphicon glyphicon-remove"></span>
+                    Register
+                </a>
+                <!-- <a (click)="cancel()" class="btn btn-danger btn-lg btn-block">
+                    <span class="glyphicon glyphicon-remove"></span>
+                    Cancel
+                </a> -->
+            </div>
+        </form>
+        <div class="col-md-3 text-center"></div>
+    </div>
+</div>

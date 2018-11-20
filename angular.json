@@ -20,12 +20,22 @@
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/assets",
+              "src/favicon.ico",
+              "src/plugins",
+              "src/dist",
+              "src/bower_components"
             ],
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/dist/js/jquery.min.js",
+              "src/dist/js/adminlte.min.js",
+              "src/dist/js/pages/dashboard2.js",
+              "src/dist/js/demo.js"
+            ]
           },
           "configurations": {
             "production": {
