@@ -24,7 +24,6 @@ export class RegisterComponent implements OnInit {
     this.auth.register(register.value)
     .subscribe(data => {
       this.tokenWithUser = data;
-      localStorage.setItem('token', this.loginResponse.access_token.toString());
       localStorage.setItem('token', this.tokenWithUser.userTokenState.access_token.toString());
       localStorage.setItem('firstName', this.tokenWithUser.userGetDto.firstName.toString());
       localStorage.setItem('lastName', this.tokenWithUser.userGetDto.lastName.toString());

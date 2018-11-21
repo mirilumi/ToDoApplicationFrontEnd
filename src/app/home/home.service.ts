@@ -8,12 +8,18 @@ import { ItemPostDto } from "../model/ItemPostDto";
 
 @Injectable()
 export class HomeService{
-    clientUrl = environment.serverUrl+"/api/client";
+    clientUrl = environment.serverUrl+"/api/item";
     constructor(private auth:AuthenticationService, private http : HttpClient){}
     getAllItems():Observable<Item[]>{
-        return this.http.get<Item[]>(environment.serverUrl+"/api/item")
+        return this.http.get<Item[]>(this.clientUrl)
     }
     addItem(item:ItemPostDto):Observable<Item>{
-        return this.http.post<Item>(environment.serverUrl+"/api/item",item);
+        return this.http.post<Item>(this.clientUrl,item);
+    }
+    removeItem(id:Number){
+        return this.http.delete(this.clientUrl+'/'+id);
+    }
+    editItem(item:Item){
+        return this.http.patch(this.clientUrl+'/'+item.id,item);
     }
 }
