@@ -11,11 +11,14 @@ export class AppheaderComponent implements OnInit {
 
   private UserObj:any;
   private notification = [];
-  constructor(private auth:AuthenticationService){}
+  constructor(private auth:AuthenticationService,private router: Router){}
   ngOnInit(){
     // console.log(this.userContext)
   }
-  logout(){
-    this.auth.logout();
+  logout() {
+    localStorage.removeItem("token");
+    localStorage.removeItem('firstName');
+    localStorage.removeItem('lastName');
+    this.router.navigate(['login']);
   }
 }
