@@ -21,7 +21,7 @@
               </div>
               <div class="col-md-2">
                 <div class="form-actions">
-                  <button type="submit" [disabled]="!itemToAdd.form.valid || dataLoading" class="btn btn-success btn-lg btn-block"><span
+                  <button type="submit" [disabled]="!itemToAdd.form.valid" class="btn btn-success btn-lg btn-block"><span
                       class="glyphicon glyphicon-pushpin"></span>Add Item</button>
                 </div>
               </div>
@@ -62,7 +62,7 @@
               <div class="row">
                 <div class="col-md-10">
                   <div class="form-actions">
-                    <button type="submit" [disabled]="!itemToEdit.form.valid || dataLoading" class="btn btn-success btn-lg btn-block"><span
+                    <button type="submit" [disabled]="!itemToEdit.form.valid" class="btn btn-success btn-lg btn-block"><span
                         class="glyphicon glyphicon-pushpin"></span>Edit Item</button>
                     <a class="btn btn-danger btn-lg btn-block" (click)="back()">Back</a>
                   </div>

@@ -14,9 +14,9 @@ import { ItemPostDto } from '../model/ItemPostDto';
 export class HomeComponent implements OnInit {
 
   constructor(private router: Router, private auth: AuthenticationService, private homeService: HomeService) { }
-  private UserObj: object = {};
-  private firstName: String;
-  private lastName: String;
+  public UserObj: object = {};
+  public firstName: String;
+  public lastName: String;
   items: Item[];
   item: Item;
   toEdit: Boolean = false;

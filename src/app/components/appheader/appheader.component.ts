@@ -9,8 +9,8 @@ import { Router } from '@angular/router';
 })
 export class AppheaderComponent implements OnInit {
 
-  private UserObj:any;
-  private notification = [];
+  public UserObj:any;
+  public notification = [];
   constructor(private auth:AuthenticationService,private router: Router){}
   ngOnInit(){
     // console.log(this.userContext)
